@@ -14,13 +14,16 @@ int RomToInt(char numeral) {
 }
 
 int main() {
-	string inputdata = "XIV";
+	string inputdata = "CDIV";
 	int result = 0;
 
 
 	for (int i = inputdata.length() - 1; i > -1; i--) {
 		if ((i > 0) && RomToInt(inputdata[i - 1]) < RomToInt(inputdata[i])) {
 			result += (RomToInt(inputdata[i]) - RomToInt(inputdata[i - 1]));
+			if (i > 0) {
+				i--;
+			}
 		}
 		else {
 			result += RomToInt(inputdata[i]);
