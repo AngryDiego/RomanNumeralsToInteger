@@ -14,12 +14,17 @@ int RomToInt(char numeral) {
 }
 
 int main() {
-	string inputdata = "XVI";
+	string inputdata = "XIV";
 	int result = 0;
 
-	for (int i = 0; i < inputdata.length(); i++) {
-		result += RomToInt(inputdata[i]);
+
+	for (int i = inputdata.length() - 1; i > -1; i--) {
+		if ((i > 0) && RomToInt(inputdata[i - 1]) < RomToInt(inputdata[i])) {
+			result += (RomToInt(inputdata[i]) - RomToInt(inputdata[i - 1]));
+		}
+		else {
+			result += RomToInt(inputdata[i]);
+		}
 	}
 	cout << result << endl;
-
 }
