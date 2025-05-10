@@ -25,6 +25,7 @@ int main() {
 		else {
 			result += RomToInt(inputdata[i]);
 		}
-	}
 	cout << result << endl;
+	}
+
 }
