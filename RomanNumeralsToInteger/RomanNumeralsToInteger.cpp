@@ -14,5 +14,12 @@ int RomToInt(char numeral) {
 }
 
 int main() {
-	cout << RomToInt('V') ;
+	string inputdata = "XVI";
+	int result = 0;
+
+	for (int i = 0; i < inputdata.length(); i++) {
+		result += RomToInt(inputdata[i]);
+	}
+	cout << result << endl;
+
 }
